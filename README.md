@@ -206,7 +206,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
     a.Click Start, search for PowerShell ISE, right-click, and select Run as Administrator.
 
   3. Paste the following script into a new file in PowerShell ISE:
-    a.This script creates 10 users (user1 to user10) with the password Password123! and places them in the _EMPLOYEES OU.
+    a.This script creates 1000 users with the password Password1 and places them in the _EMPLOYEES OU.
 
   4. Run the script:
     a.Click Run or press F5 to execute.
@@ -214,14 +214,22 @@ This project demonstrates the deployment and configuration of a Domain Controlle
   5. Verify the users in ADUC:
     a.Open Active Directory Users and Computers and navigate to the _EMPLOYEES OU.
 
+![image](https://github.com/user-attachments/assets/359088fd-310c-4915-a34d-37770681e8a2)
+
+![image](https://github.com/user-attachments/assets/e31e2cb8-fc98-4948-805b-b357cabcc8d1)
+
+
+
 **7. Test User Login on Client-1**
 
   1. Attempt to log into Client-1 using one of the newly created accounts:
-    -Username: mydomain.com\user1
+    -Username: mydomain.com\_____
     -Password: Password123!
      
   2. Confirm that the login is successful, demonstrating proper integration of the new accounts.
-  
+
+![image](https://github.com/user-attachments/assets/15f7ae8f-bb0f-4d1b-9223-3e3048071741)
+
 
 
 
