@@ -19,7 +19,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 
 <h2>Installation Steps</h2>
 
-<h2>1. Setup the Domain Controller (DC-1) in Azure<h2>
+<h2>1. Setup the Domain Controller (DC-1) in Azure</h2>
 
 **1.Create a Resource Group**
 
@@ -60,7 +60,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
       -Click Window Firewall Properties 
       -Turn Domain, Private,and Public Firewall State off and go to IPSec Settings to Apply
 
-<h2>2. Setup the Client (Client-1) in Azure<h2>
+<h2>2. Setup the Client (Client-1) in Azure</h2>
   
   **1.Create the Client VM**
   
