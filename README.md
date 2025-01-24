@@ -23,25 +23,25 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 
 **1.Create a Resource Group**
 
-  a. Navigate to the Azure Portal and create a Resource Group named Lab-RG.
+    a. Navigate to the Azure Portal and create a Resource Group named Lab-RG.
   
 **2.Create a Virtual Network and Subnet**
 
-  a. Create a Virtual Network named Lab-VNet within Lab-RG.
+    a. Create a Virtual Network named Lab-VNet within Lab-RG.
   
-  b. Add a Subnet named Lab-Subnet to the Virtual Network.
+    b. Add a Subnet named Lab-Subnet to the Virtual Network.
   
 **3.Create the Domain Controller VM**
 
-  a. Deploy a Virtual Machine with the following settings:
+    a. Deploy a Virtual Machine with the following settings:
   
-    - Name: DC-1
-    - OS: Windows Server 2022
-    - Region: Same as Lab-VNet
-    - Credentials:
-    - Username: labuser
-    - Password: Cyberlab123!
-    - Attach the VM to Lab-VNet and Lab-Subnet.
+      - Name: DC-1
+      - OS: Windows Server 2022
+      - Region: Same as Lab-VNet
+      - Credentials:
+      - Username: labuser
+      - Password: Cyberlab123!
+      - Attach the VM to Lab-VNet and Lab-Subnet.
     
 **4.Set Static Private IP Address**
 
@@ -62,7 +62,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 
 <h2>2. Setup the Client (Client-1) in Azure</h2>
   
-  **1. Create the Client VM**
+**1. Create the Client VM**
   
     a. Deploy a Virtual Machine with the following settings:
       - Name: Client-1
@@ -74,22 +74,22 @@ This project demonstrates the deployment and configuration of a Domain Controlle
     b. Attach the VM to Lab-VNet and Lab-Subnet.
 **2.Configure DNS Settings**
 
-  a. Navigate to Client-1's Networking settings in the Azure Portal.
-  b. Set the NIC’s DNS server to the Private IP address of DC-1.
+    a. Navigate to Client-1's Networking settings in the Azure Portal.
+    b. Set the NIC’s DNS server to the Private IP address of DC-1.
   
 **3.Restart the Client VM**
 
-  a. Restart Client-1 from the Azure Portal to apply DNS changes.
+    a. Restart Client-1 from the Azure Portal to apply DNS changes.
 
 ![image](https://github.com/user-attachments/assets/362fbde7-0a7f-4c2b-b431-484fd9000947)
 
   
 **4.Test Connectivity**
 
-  a. Log into Client-1 via Remote Desktop.
-  b. Open Command Prompt or PowerShell and run
-    - Type command ping dc-1 private ip address (ping 10.0.0.4)
-    - Type command ipconfig /all to confirm DNS Servers IP address is dc-1 Private IP address
+    a. Log into Client-1 via Remote Desktop.
+    b. Open Command Prompt or PowerShell and run
+      - Type command ping dc-1 private ip address (ping 10.0.0.4)
+      - Type command ipconfig /all to confirm DNS Servers IP address is dc-1 Private IP address
 
 ![image](https://github.com/user-attachments/assets/231cd34d-f69a-467f-9989-de369cc29204)
 
