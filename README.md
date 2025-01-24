@@ -93,5 +93,99 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 
 ![image](https://github.com/user-attachments/assets/231cd34d-f69a-467f-9989-de369cc29204)
 
-    
+<h2>Install Active Directory Domain Services</h2>
+
+**1.Install Active Directory**
+
+  1. Setup and Promote Domain Controller (DC-1)
+  a.Log into DC-1 using Remote Desktop with:
+    Username: labuser
+    Password: Cyberlab123!
+  2.Open Server Manager and install Active Directory Domain Services (AD DS):
+    a.Click Add Roles and Features and select Active Directory Domain Services.
+  3.Promote DC-1 to a Domain Controller:
+    a.Choose Add a new forest and set the domain name (e.g., mydomain.com).
+    b.Set a secure Directory Services Restore Mode (DSRM) password.
+    c.Complete the wizard and restart the server.
+  4.Log back into DC-1 as:
+    -Username: mydomain.com\labuser
+    -Password: Cyberlab123!
+     
+![image](https://github.com/user-attachments/assets/08c39821-60b0-43e6-96ed-63cba02c3f21)
+
+**2. Configure Organizational Units (OUs) and Domain Admin Account**
+   1.Open Active Directory Users and Computers (ADUC) from the Server Manager or Start Menu.
+   2.Create Organizational Units:
+      a.Right-click your domain (e.g., mydomain.com) and select New > Organizational Unit.
+      b.Create an OU named _EMPLOYEES.
+      c.Create another OU named _ADMINS.
+  3.Create a Domain Admin User:
+    a.Navigate to the _ADMINS OU.
+    b.Right-click and select New > User.
+      -Enter the following:
+      -First Name: Jane
+      -Last Name: Doe
+      -User logon name: jane_admin
+      -Password: Cyberlab123!
+      -Uncheck User must change password at next logon.
+    c. Complete the wizard to create the user.
+  4.Add jane_admin to the Domain Admins Group:
+    a.Open jane_admin's properties in ADUC.
+    b.Navigate to the Member Of tab, click Add, and add the Domain Admins group.
+  5.Log out of DC-1 and log back in as:
+    -Username: mydomain.com\jane_admin
+    -Password: Cyberlab123!
+
+**3. Join Client-1 to the Domain**
+  1.Log into Client-1 using Remote Desktop with:
+    -Username: labuser
+    -Password: Cyberlab123!
+  2.Set the system to join the domain:
+    a.Open System Properties (Right-click This PC > Properties > Advanced System Settings > Computer Name).
+    b.Click Change and enter the domain name (e.g., mydomain.com).
+    c.Enter jane_admin credentials when prompted.
+    d.Restart the computer to apply changes.
+  3.Log back into Client-1 using domain credentials:
+    -Username: mydomain.com\jane_admin
+    -Password: Cyberlab123!
+
+**4. Organize Client-1 in ADUC**
+  1.Log into DC-1 and open Active Directory Users and Computers.
+  2.Verify that Client-1 appears under Computers.
+  3.Create a new OU named _CLIENTS in the domain:
+   a.Right-click the domain and select New > Organizational Unit.
+  4.Drag Client-1 into the _CLIENTS OU.
+
+![image](https://github.com/user-attachments/assets/e11b5080-582e-4f40-8c5b-f1d7c790d05b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
