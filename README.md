@@ -93,7 +93,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 
 ![image](https://github.com/user-attachments/assets/231cd34d-f69a-467f-9989-de369cc29204)
 
-<h2>Install Active Directory Domain Services</h2>
+<h2>Install and Setup Active Directory Domain Services</h2>
 
 
 **1.Install Active Directory**
@@ -147,6 +147,9 @@ This project demonstrates the deployment and configuration of a Domain Controlle
     - Username: mydomain.com\jane_admin
     - Password: Cyberlab123!
 
+![image](https://github.com/user-attachments/assets/e125a877-26f5-430c-b7f2-b1593fe59e87)
+
+
 **3. Join Client-1 to the Domain**
 
   1. Log into Client-1 using Remote Desktop with:
@@ -177,12 +180,48 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 
 ![image](https://github.com/user-attachments/assets/e11b5080-582e-4f40-8c5b-f1d7c790d05b)
 
+**5. Configure Remote Desktop for Domain Users on Client-1**
 
+  1. Log into Client-1 with:
+    - Username: mydomain.com\jane_admin
+    - Password: Cyberlab123!
+     
+  2. Open System Properties:
+    a.Right-click This PC > Properties > Advanced System Settings > Remote Desktop tab.
+ 
+  3. Enable Remote Desktop:
+    a.Select Allow remote connections to this computer.
+    b.Click Select Users, then add Domain Users.
+    c.Save and close.
 
+  4. Test RDP access by logging into Client-1 with a non-administrative user account.
 
+**6.Bulk Create Users in Active Directory**
 
+  1. Log into DC-1 with:
+    -Username: mydomain.com\jane_admin
+    -Password: Cyberlab123!
+     
+  2. Open PowerShell ISE as an Administrator:
+    a.Click Start, search for PowerShell ISE, right-click, and select Run as Administrator.
 
+  3. Paste the following script into a new file in PowerShell ISE:
+    a.This script creates 10 users (user1 to user10) with the password Password123! and places them in the _EMPLOYEES OU.
 
+  4. Run the script:
+    a.Click Run or press F5 to execute.
+
+  5. Verify the users in ADUC:
+    a.Open Active Directory Users and Computers and navigate to the _EMPLOYEES OU.
+
+**7. Test User Login on Client-1**
+
+  1. Attempt to log into Client-1 using one of the newly created accounts:
+    -Username: mydomain.com\user1
+    -Password: Password123!
+     
+  2. Confirm that the login is successful, demonstrating proper integration of the new accounts.
+  
 
 
 
