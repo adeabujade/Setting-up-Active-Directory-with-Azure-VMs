@@ -223,6 +223,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 **7. Test User Login on Client-1**
 
   1. Attempt to log into Client-1 using one of the newly created accounts:
+
     -Username: mydomain.com\bam.hibu
     -Password: Password123!
      
