@@ -206,7 +206,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
     a.Click Start, search for PowerShell ISE, right-click, and select Run as Administrator.
 
   3. Paste the following script into a new file in PowerShell ISE:
-    a.This script creates 1000 users with the password Password1 and places them in the _EMPLOYEES OU.
+    a.This script creates 10000 users with the password Password1 and places them in the _EMPLOYEES OU.
 
   4. Run the script:
     a.Click Run or press F5 to execute.
@@ -223,7 +223,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 **7. Test User Login on Client-1**
 
   1. Attempt to log into Client-1 using one of the newly created accounts:
-    -Username: mydomain.com\_____
+    -Username: mydomain.com\bam.hibu
     -Password: Password123!
      
   2. Confirm that the login is successful, demonstrating proper integration of the new accounts.
