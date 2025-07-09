@@ -99,10 +99,12 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 **1.Install Active Directory**
 
   1. Setup and Promote Domain Controller (DC-1)
+     
     a. Log into DC-1 using Remote Desktop with:
       - Username: labuser
       - Password: Cyberlab123!
-  2. Open Server Manager and install Active Directory Domain Services (AD DS):
+      
+  3. Open Server Manager and install Active Directory Domain Services (AD DS):
 
     a. Click Add Roles and Features and select Active Directory Domain Services.
     
@@ -113,6 +115,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
     c. Complete the wizard and restart the server.
     
   4. Log back into DC-1 as:
+     
     - Username: mydomain.com\labuser
     - Password: Cyberlab123!
      
@@ -122,12 +125,12 @@ This project demonstrates the deployment and configuration of a Domain Controlle
    1. Open Active Directory Users and Computers (ADUC) from the Server Manager or Start Menu.
    
    2. Create Organizational Units:
-   
-      a .Right-click your domain (e.g., mydomain.com) and select New > Organizational Unit.
-      b. Create an OU named _EMPLOYEES.
-      c. Create another OU named _ADMINS.
+
+    a. Right-click your domain (e.g., mydomain.com) and select New > Organizational Unit.
+    b. Create an OU named _EMPLOYEES.
+    c. Create another OU named _ADMINS.
       
-  3. Create a Domain Admin User:
+  4. Create a Domain Admin User:
   
     a. Navigate to the _ADMINS OU.
     b. Right-click and select New > User.
@@ -140,10 +143,12 @@ This project demonstrates the deployment and configuration of a Domain Controlle
     c. Complete the wizard to create the user.
     
   4. Add jane_admin to the Domain Admins Group:
+     
     a. Open jane_admin's properties in ADUC.
     b. Navigate to the Member Of tab, click Add, and add the Domain Admins group.
     
-  5. Log out of DC-1 and log back in as:
+  6. Log out of DC-1 and log back in as:
+     
     - Username: mydomain.com\jane_admin
     - Password: Cyberlab123!
 
@@ -153,10 +158,11 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 **3. Join Client-1 to the Domain**
 
   1. Log into Client-1 using Remote Desktop with:
+     
     - Username: labuser
     - Password: Cyberlab123!
     
-  2. Set the system to join the domain:
+  3. Set the system to join the domain:
   
     a. Open System Properties (Right-click This PC > Properties > Advanced System Settings > Computer Name).
     b. Click Change and enter the domain name ( mydomain.com).
@@ -164,6 +170,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
     d. Restart the computer to apply changes.
     
   3. Log back into Client-1 using domain credentials:
+     
     - Username: mydomain.com\jane_admin
     - Password: Cyberlab123!
 
@@ -173,8 +180,8 @@ This project demonstrates the deployment and configuration of a Domain Controlle
   2. Verify that Client-1 appears under Computers.
   
   3. Create a new OU named _CLIENTS in the domain:
-  
-   a. Right-click the domain and select New > Organizational Unit.
+     
+    a. Right-click the domain and select New > Organizational Unit.
    
   4. Drag Client-1 into the _CLIENTS OU.
 
@@ -183,35 +190,43 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 **5. Configure Remote Desktop for Domain Users on Client-1**
 
   1. Log into Client-1 with:
+     
     - Username: mydomain.com\jane_admin
     - Password: Cyberlab123!
      
-  2. Open System Properties:
+  3. Open System Properties:
+     
     a.Right-click This PC > Properties > Advanced System Settings > Remote Desktop tab.
  
-  3. Enable Remote Desktop:
+  5. Enable Remote Desktop:
+     
     a.Select Allow remote connections to this computer.
     b.Click Select Users, then add Domain Users.
     c.Save and close.
 
-  4. Test RDP access by logging into Client-1 with a non-administrative user account.
+  7. Test RDP access by logging into Client-1 with a non-administrative user account.
 
 **6.Bulk Create Users in Active Directory**
 
   1. Log into DC-1 with:
+     
     -Username: mydomain.com\jane_admin
     -Password: Cyberlab123!
      
-  2. Open PowerShell ISE as an Administrator:
+  3. Open PowerShell ISE as an Administrator:
+     
     a.Click Start, search for PowerShell ISE, right-click, and select Run as Administrator.
 
-  3. Paste the following script into a new file in PowerShell ISE:
+  5. Paste the following script into a new file in PowerShell ISE:
+     
     a.This script creates 10000 users with the password Password1 and places them in the _EMPLOYEES OU.
 
-  4. Run the script:
+  7. Run the script:
+     
     a.Click Run or press F5 to execute.
 
-  5. Verify the users in ADUC:
+  9. Verify the users in ADUC:
+      
     a.Open Active Directory Users and Computers and navigate to the _EMPLOYEES OU.
 
 ![image](https://github.com/user-attachments/assets/359088fd-310c-4915-a34d-37770681e8a2)
