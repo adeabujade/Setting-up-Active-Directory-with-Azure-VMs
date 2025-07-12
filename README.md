@@ -14,7 +14,7 @@ This project demonstrates the deployment and configuration of a Domain Controlle
 
 <h2>Operating Systems Used </h2>
 
-- Windows Sserver 2022
+- Windows Server 2022
 - Windows 10 Pro
 
 <h2>Installation Steps</h2>
